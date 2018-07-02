@@ -23,10 +23,9 @@ let urlsToCache = [
 
 self.addEventListener("install", event => {
   event.waitUntil(
-    caches
-      .open(staticCacheName)
-      .then(cache => cache.addAll(urlsToCache))
-      .then(self.skipWaiting())
+    caches.open(staticCacheName)
+    .then(cache => cache.addAll(urlsToCache))
+    .then(self.skipWaiting())
   );
 });
 
